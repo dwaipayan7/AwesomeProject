@@ -215,76 +215,88 @@
 
 
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from './screen/HomeScreen';
-import ProfileScreen from './screen/ProfileScreen';
-import Icon from 'react-native-vector-icons/AntDesign';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import HomeScreen from './screen/HomeScreen';
+// import ProfileScreen from './screen/ProfileScreen';
+// import Icon from 'react-native-vector-icons/AntDesign';
+// import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const myIcon = <Icon name='rocket' size={30} color= '#900'/>
+// // const myIcon = <Icon name='rocket' size={30} color= '#900'/>
 
-const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+// const Stack = createNativeStackNavigator();
+// const Tab = createBottomTabNavigator();
 
-// Tab Navigator (bottom tabs for Home & Profile)
-function TabNavigator() {
-  return (
-    <Tab.Navigator initialRouteName="Home" screenOptions={{
-      tabBarActiveTintColor: 'red',
-      tabBarInactiveTintColor: 'gray',
-      headerTitleAlign: 'center',
-      tabBarLabelStyle: {
-        fontSize: 12
-      },
-      tabBarStyle: {
-        height: 70
-      },
+// // Tab Navigator (bottom tabs for Home & Profile)
+// function TabNavigator() {
+//   return (
+//     <Tab.Navigator initialRouteName="Home" screenOptions={{
+//       tabBarActiveTintColor: 'red',
+//       tabBarInactiveTintColor: 'gray',
+//       headerTitleAlign: 'center',
+//       tabBarLabelStyle: {
+//         fontSize: 12
+//       },
+//       tabBarStyle: {
+//         height: 70
+//       },
 
 
 
-    }}>
-      <Tab.Screen name="Home" component={HomeScreen} options={{
-        tabBarIcon: () => {
-          return(
-          <Icon name='home' size={30} color= 'black'/>
-          );
-        }
-      }}/>
-      <Tab.Screen name="Profile" component={ProfileScreen}
+//     }}>
+//       <Tab.Screen name="Home" component={HomeScreen} options={{
+//         tabBarIcon: () => {
+//           return(
+//           <Icon name='home' size={30} color= 'black'/>
+//           );
+//         }
+//       }}/>
+//       <Tab.Screen name="Profile" component={ProfileScreen}
       
-      options={{
-        tabBarIcon: () => <Ionicons name='person' size={30} color= 'black'></Ionicons>
-      }}
+//       options={{
+//         tabBarIcon: () => <Ionicons name='person' size={30} color= 'black'></Ionicons>
+//       }}
       
-      />
-    </Tab.Navigator>
-  );
-}
+//       />
+//     </Tab.Navigator>
+//   );
+// }
 
-// Root Stack contains Tabs and any other screens like Details etc.
+// // Root Stack contains Tabs and any other screens like Details etc.
+// const App = () => {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator >
+//         <Stack.Screen
+//           name="Main"
+//           component={TabNavigator}
+//           options={{ headerShown: false }} // hide header for tabs
+//         />
+//         {/* You can add more stack screens here if needed */}
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// };
+
+// export default App;
+
+
+
+
+//Project
+import { View, Text } from 'react-native'
+import HomePage from './src/pages/HomePage'
+
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator >
-        <Stack.Screen
-          name="Main"
-          component={TabNavigator}
-          options={{ headerShown: false }} // hide header for tabs
-        />
-        {/* You can add more stack screens here if needed */}
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
+    <View>
+     <HomePage />
+    </View>
+  )
+}
 
-export default App;
-
-
-
-
-
+export default App
 
 
 
